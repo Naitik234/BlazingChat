@@ -27,7 +27,6 @@
                 <div class="col-sm-3 col-3">
                     <ChatsList Loading="_loadingUsers" Chats="Chats" OnUserSelected="OnUserSelected" />
                 </div>
-                @*<div class="col-sm-8 col-6 d-flex justify-content-center align-items-center" style="background-color: #f4ecff;">*@
                 <div class="col-sm-6 col-6 d-flex px-0">
                     <ChatDetails SelectedUser="_selectedUser" 
                         NewIncomingMessage="@_newIncomingMessage"
@@ -60,8 +59,7 @@
         var jwt = new JwtSecurityToken(AuthenticationState.Token);
         if (jwt.ValidTo <= DateTime.Now)
         {
-            // Token has expired
-            // Navigate to login page
+         
             await HandleLogout();
             return true;
         }
@@ -147,7 +145,7 @@
     {
         await JsRuntime.InvokeVoidAsync("window.removeFromStorage", AuthenticationState.AuthStoreKey);
         AuthenticationState.UnLoadState();
-        //NavigationManager.NavigateTo("/");
+    
     }
 
     private HubConnection ConfigureHubConnection()
@@ -197,7 +195,6 @@
             {
                 if (_selectedUser?.Id == messageDto.FromUserId)
                 {
-                    // Append the message to the messages list
                     _newIncomingMessage = messageDto;
                 }
             }

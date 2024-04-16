@@ -12,7 +12,7 @@
             <EditForm Model="LoginModel" OnValidSubmit="LoginAsync">
                 <div class="card br-0 mt-5">
                     <div class="card-header bg-main br-0">
-                        <h2 class="text-white mb-0">Blazing Chat - Login</h2>
+                        <h2 class="text-white mb-0">Login</h2>
                     </div>
                     <div class="card-body">
                         <DataAnnotationsValidator />
@@ -78,12 +78,12 @@
 
                 var serialized = JsonConverter.Serialize(authResult);
                 await JsRuntime.InvokeVoidAsync("window.setToStorage", AuthenticationState.AuthStoreKey, serialized);
-                //NavigationManager.NavigateTo("/chat");
+             
                 AuthenticationState.LoadState(authResult);
             }
             else
             {
-                // Login wasnt successfull
+              
                 string? errorContent = null;
                 try
                 {
