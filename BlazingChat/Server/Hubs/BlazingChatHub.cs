@@ -30,3 +30,4 @@ namespace BlazingChat.Server.Hubs
         }
     }
 }
+

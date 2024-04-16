@@ -70,3 +70,4 @@ namespace BlazingChat.Server.Controllers
         }
     }
 }
+

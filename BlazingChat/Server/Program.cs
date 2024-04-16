@@ -34,8 +34,11 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-builder.Services.AddDbContext<ChatContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Chat")));
-
+//builder.Services.AddDbContext<ChatContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Chat")));
+builder.Services.AddDbContext<ChatContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 builder.Services.AddTransient<TokenService>();
 
 builder.Services.AddSignalR();

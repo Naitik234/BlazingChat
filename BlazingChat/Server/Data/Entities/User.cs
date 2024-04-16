@@ -20,7 +20,6 @@ namespace BlazingChat.Server.Data.Entities
 
         [Required, MaxLength(20)]
         public string Password { get; set; }
-
-
     }
 }
+

@@ -22,3 +22,4 @@ namespace BlazingChat.Server.Data.Entities
         public virtual User ToUser { get; set; }
     }
 }
+

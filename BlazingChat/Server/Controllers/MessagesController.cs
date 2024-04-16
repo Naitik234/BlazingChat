@@ -21,7 +21,6 @@ namespace BlazingChat.Server.Controllers
             _hubContext = hubContext;
         }
 
-        // /api/messages
         [HttpPost("")]
         public async Task<IActionResult> SendMessage(MessageSendDto messageDto, CancellationToken cancellationToken)
         {
@@ -64,4 +63,5 @@ namespace BlazingChat.Server.Controllers
             return messages;
         }
     }
+
 }
